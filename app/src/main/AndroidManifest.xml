@@ -44,7 +44,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sharefi.ajkannampuzha.sharefi2.Splash" />
         </activity>
-        <activity android:name=".policies"></activity>
+        <activity android:name=".policies" />
+        <activity android:name=".confirm_activity"></activity>
     </application>
 
 </manifest>

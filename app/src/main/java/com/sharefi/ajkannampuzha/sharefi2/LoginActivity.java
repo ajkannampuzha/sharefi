@@ -360,6 +360,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
             showProgress(false);
+            //email address and password are bundled and carried along with the next class
 
             if (success) {
                 Intent i = new Intent(LoginActivity.this, policies.class);

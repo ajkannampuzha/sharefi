@@ -1,15 +1,17 @@
 package com.sharefi.ajkannampuzha.sharefi2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 public class policies extends AppCompatActivity {
     Bundle bundle =getIntent().getExtras();
-    public final String email=bundle.getString("email");
-    public final String password=bundle.getString("password");
+    public final String memail=bundle.getString("email");
+    public final String mpassword=bundle.getString("password");
     public int count=0;
 
     @Override
@@ -80,7 +82,19 @@ public class policies extends AppCompatActivity {
             }
         });
         if(count==4){
-            //// TODO: 8/30/2016 Bundle values of email and password and move on to the next activity 
+            mButton.setEnabled(true);
+            mButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public  void onClick(View V){
+                    Intent i = new Intent(policies.this, confirm_activity.class);
+                    Bundle bundle= new Bundle();
+                    bundle.putString("email",memail);
+                    bundle.putString("password",mpassword);
+                    i.putExtras(bundle);
+                    startActivity(i);
+                }
+            });
+
         }
     }
 }
